@@ -27,7 +27,7 @@ public class CreatePlayer : MonoBehaviour
             player.name = PlayerPrefs.GetString("PlayerName");
 
             cameraObject.SetParent(player.transform, false);
-            cameraObject.localPosition = new Vector3(0, 3f, -2f);
+            cameraObject.localPosition = new Vector3(0, 2.2f, -4f);
             cameraObject.Rotate(0, 0, 0);
         }
 
