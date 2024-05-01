@@ -5,6 +5,13 @@ using UnityEngine;
 public class BorderLightSlider : MonoBehaviour
 {
     private Transform _transform;
+
+    public Light targetLight;
+    public float minPosition;
+    public float maxPosition;
+    public float minIntensity;
+    public float maxIntensity;
+
     private void Start()
     {
         _transform = GetComponent<Transform>();
@@ -24,6 +31,8 @@ public class BorderLightSlider : MonoBehaviour
             _transform.position = new Vector3(_transform.position.x, 7.2f, -3.50f);
         }
 
-
+        float t = Mathf.InverseLerp(minPosition, maxPosition, _transform.position.x);
+        float intensity = Mathf.Lerp(minIntensity, maxIntensity, t);
+        targetLight.intensity = intensity;
     }
 }
