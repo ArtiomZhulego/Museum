@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 8284.276, g: 7098.9385, b: 7617.5376, a: 1}
+  m_IndirectSpecularColor: {r: 8301.075, g: 7113.6846, b: 7633.212, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -386,7 +386,7 @@ Animator:
   m_GameObject: {fileID: 832149484464936707}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec28bf1feebe6204c880d540aef57bc4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1268,7 +1268,7 @@ Animator:
   m_GameObject: {fileID: 8707273952815998327}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec28bf1feebe6204c880d540aef57bc4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 50000
+  m_Intensity: 51207.723
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -1882,7 +1882,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 50000
+  m_Intensity: 51207.723
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2294,7 +2294,7 @@ Animator:
   m_GameObject: {fileID: 2076850630624086294}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec28bf1feebe6204c880d540aef57bc4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3680,12 +3680,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec1efa4018e0d94885c6b1de5e016a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _checkBox: {fileID: 0}
+  GameObj: {x: 0, y: 0, z: 0}
   objectToMove: {fileID: 225637610182373182}
-  minX: -5
-  maxX: 5
-  minVolume: 0
-  maxVolume: 30
-  audioSource: {fileID: 1448115257}
 --- !u!4 &1209933927 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5581021987885427497, guid: 9b23721638796194c8e334958026b8c3,
@@ -4439,7 +4436,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 89b7127e0ce50f34b81ddc8980c119d0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.062
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4447,7 +4444,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 12.555264
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -6555,7 +6552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &523983921057505241
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8462,8 +8459,8 @@ Transform:
   m_GameObject: {fileID: 832149484464936707}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -5.338, y: 1.027, z: -2.187}
-  m_LocalScale: {x: 127.0111, y: 312.84686, z: 24.728895}
+  m_LocalPosition: {x: -5.3332, y: 1.027, z: -2.187}
+  m_LocalScale: {x: 126.528465, y: 312.84686, z: 24.728895}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1290268953679027211}
@@ -9491,7 +9488,6 @@ GameObject:
   - component: {fileID: 5433164978637546048}
   - component: {fileID: 5980396175869378968}
   - component: {fileID: 8713385752135988469}
-  - component: {fileID: 8713385752135988470}
   m_Layer: 0
   m_Name: More
   m_TagString: More
@@ -10302,7 +10298,6 @@ GameObject:
   - component: {fileID: 6057729019315403186}
   - component: {fileID: 4409601939107846854}
   - component: {fileID: 7521646508870923905}
-  - component: {fileID: 7521646508870923904}
   m_Layer: 0
   m_Name: LightSlider
   m_TagString: Untagged
@@ -10310,27 +10305,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &7521646508870923904
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7521646508870923903}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.020000009, y: 0.020000001, z: 0.020000005}
-  m_Center: {x: -0.00000011920929, y: -0.000000059604645, z: 0.00000011920929}
 --- !u!114 &7521646508870923905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10343,11 +10317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b74cd64feb0e4428c4a2228b512530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetLight: {fileID: 273971906}
-  minPosition: -12
-  maxPosition: -6.5
-  minIntensity: 1000
-  maxIntensity: 80000
+  lightObject: {fileID: 273971906}
 --- !u!33 &7606442909206617495
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10909,8 +10879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26fe3abc058aeae4bae01fdd4437a960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkBox: {fileID: 7521646508870923903}
-  GameObj: {x: 0, y: 0, z: 0}
   objectToMove: {fileID: 7521646508870923903}
 --- !u!1 &8416272007799605400
 GameObject:
@@ -11568,33 +11536,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &8713385752135988470
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5751024378212429342}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &8757042446536010265
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,9 @@ public class borderSlider : MonoBehaviour
     private void Start()
     {
         _transform = GetComponent<Transform>();
+
+        // Подписываемся на событие OnObjectMoved
+        volumeSlider.OnObjectMoved += SaveVolume;
     }
 
     void FixedUpdate()
@@ -26,7 +29,16 @@ public class borderSlider : MonoBehaviour
         {
             _transform.position = new Vector3(_transform.position.x, 9.3f, -3.70f);
         }
+    }
 
+    private void OnDestroy()
+    {
+        // Отписываемся от события OnObjectMoved при уничтожении объекта
+        volumeSlider.OnObjectMoved -= SaveVolume;
+    }
+
+    private void SaveVolume()
+    {
         // Вычисление и сохранение значения громкости
         float normalizedVolume = Mathf.InverseLerp(-6.7f, -12.3f, _transform.position.x);
         float scaledVolume = Mathf.Lerp(0f, 1f, normalizedVolume);
