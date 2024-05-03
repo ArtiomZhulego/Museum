@@ -26,19 +26,19 @@ public class Film1Film : MonoBehaviour
     void OnMouseDown()
     {
         
-            PlayerPrefs.SetString("FilmName", "http://kinosotik.com/download/ironiya-sudqby-ili-s-legkim-parom-?original");
-            videoUrl = PlayerPrefs.GetString("FilmName");
+        PlayerPrefs.SetString("FilmName", "http://kinosotik.com/download/ironiya-sudqby-ili-s-legkim-parom-?original");
+        videoUrl = PlayerPrefs.GetString("FilmName");
 
-            videoPlayer.url = videoUrl;
-            videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
-            videoPlayer.EnableAudioTrack(0, true);
-            videoPlayer.Prepare();
+        videoPlayer.url = videoUrl;
+        videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
+        videoPlayer.EnableAudioTrack(0, true);
+        videoPlayer.Prepare();
 
-            FilmCanvas.gameObject.SetActive(false);
-            FilmCube.SetActive(true);
-            videoPlayer.Play();
+        FilmCanvas.gameObject.SetActive(false);
+        FilmCube.SetActive(true);
+        videoPlayer.Play();
 
-            FilmCube.transform.position = targetPosition;
+        FilmCube.transform.position = targetPosition;
         isFullScrean = true;
     }    
 }

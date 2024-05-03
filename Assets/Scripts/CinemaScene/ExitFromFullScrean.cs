@@ -5,13 +5,19 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     private Vector3 originalPosition;
-    public GameObject FilmCube2;
-
     private bool isFullScrean;
+
+    public GameObject FilmCube2;
+    public GameObject TextOne;
+    public GameObject TextTwo;
+ 
     void Start()
     {
         isFullScrean = true;
         originalPosition = new Vector3(-43.6f, 22.2f, 0f);
+
+        TextOne.SetActive(true);
+        TextTwo.SetActive(true);
     }
 
     void Update()
@@ -19,7 +25,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             FilmCube2.transform.position = originalPosition;
-            isFullScrean = false;
+            isFullScrean = false; 
         }
 
         if (isFullScrean == false)
