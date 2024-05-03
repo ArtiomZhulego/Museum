@@ -26,7 +26,6 @@ public class volumeSlider : MonoBehaviour
                 OnObjectMoved();
             }
         }
-
     }
 
     private void OnMouseDrag()

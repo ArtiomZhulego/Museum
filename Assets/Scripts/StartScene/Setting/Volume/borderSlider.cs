@@ -9,7 +9,7 @@ public class borderSlider : MonoBehaviour
         _transform = GetComponent<Transform>();
 
         // Подписываемся на событие OnObjectMoved
-        volumeSlider.OnObjectMoved += SaveVolume;
+        volumeSlider.OnObjectMoved += UpdateVolume;
     }
 
     void FixedUpdate()
@@ -34,14 +34,15 @@ public class borderSlider : MonoBehaviour
     private void OnDestroy()
     {
         // Отписываемся от события OnObjectMoved при уничтожении объекта
-        volumeSlider.OnObjectMoved -= SaveVolume;
+        volumeSlider.OnObjectMoved -= UpdateVolume;
     }
 
-    private void SaveVolume()
+    private void UpdateVolume()
     {
         // Вычисление и сохранение значения громкости
         float normalizedVolume = Mathf.InverseLerp(-6.7f, -12.3f, _transform.position.x);
-        float scaledVolume = Mathf.Lerp(0f, 1f, normalizedVolume);
+        float scaledVolume = Mathf.Lerp(0.1f, 3f, normalizedVolume);
+        AudioListener.volume = scaledVolume;
         PlayerPrefs.SetFloat("totalVolume", scaledVolume);
         PlayerPrefs.Save();
     }
