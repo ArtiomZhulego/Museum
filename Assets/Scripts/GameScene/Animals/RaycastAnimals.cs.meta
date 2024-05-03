@@ -3,7 +3,22 @@ guid: 64ea615ef280ecf4faeb7e42de9793cb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - CanvasText: {instanceID: 0}
+  - AnimalAnimator: {instanceID: 0}
+  - Player: {instanceID: 0}
+  - "\u0413\u043E\u043C\u0435\u043B\u044C": {fileID: 8300000, guid: cce15241185dcb44e8d70959d6c38f7f,
+      type: 3}
+  - "\u0411\u0440\u0435\u0441\u0442": {fileID: 8300000, guid: acca55bcbe595ec49b2d9514a948486b,
+      type: 3}
+  - "\u0412\u0438\u0442\u0435\u0431\u0441\u043A": {fileID: 8300000, guid: 18ff26399fff14b4385524a879339269,
+      type: 3}
+  - "\u041C\u043E\u0433\u0438\u043B\u0451\u0432": {fileID: 8300000, guid: c0fe2b9f2f1011949aa9e5b3a8dceb1a,
+      type: 3}
+  - "\u041C\u0438\u043D\u0441\u043A": {fileID: 8300000, guid: 77d81230f446a3b44a15fe9116cef1b8,
+      type: 3}
+  - "\u0413\u0440\u043E\u0434\u043D\u043E": {fileID: 8300000, guid: d80c242d5742a4d4d9d2b16092b87d25,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
