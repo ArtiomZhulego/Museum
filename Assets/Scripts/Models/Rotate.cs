@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    private GameObject player;
+    public GameObject player;
 
     private float rotateMouseUp = 0f;
 
@@ -20,8 +20,8 @@ public class Rotate : MonoBehaviour
         float sensivity = PlayerPrefs.GetFloat("MouseSensitivity") * 15;
         if (player != null)
         {
-            float mouseX = Input.GetAxis("Mouse X") * sensivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * sensivity * Time.deltaTime;
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
 
             rotateMouseUp -= mouseY;
             rotateMouseUp = Mathf.Clamp(rotateMouseUp, -90f, 90f);
