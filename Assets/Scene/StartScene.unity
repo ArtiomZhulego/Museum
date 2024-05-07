@@ -3681,10 +3681,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToMove: {fileID: 225637610182373182}
-  minX: -5
-  maxX: 5
-  minVolume: 0
-  maxVolume: 30
   audioSource: {fileID: 1448115257}
 --- !u!4 &1209933927 stripped
 Transform:
@@ -6490,6 +6486,7 @@ GameObject:
   - component: {fileID: 7184466046993577906}
   - component: {fileID: 4127791569309105759}
   - component: {fileID: 7189940630840855187}
+  - component: {fileID: 7189940630840855189}
   m_Layer: 0
   m_Name: _slider
   m_TagString: Untagged
@@ -6516,7 +6513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &281855664236252586
 GameObject:
   m_ObjectHideFlags: 0
@@ -10167,6 +10164,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33930f314c419364c9b9a50850eeeff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7189940630840855189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225637610182373182}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.02000001, y: 0.02000001, z: 0.020000009}
+  m_Center: {x: 0.000000059604645, y: -0.00000035762787, z: 0.00000011920929}
 --- !u!4 &7250304917169819248
 Transform:
   m_ObjectHideFlags: 0
