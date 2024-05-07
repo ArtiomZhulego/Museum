@@ -9,6 +9,9 @@ public class borderSlider : MonoBehaviour
     private void Start()
     {
         _transform = GetComponent<Transform>();
+
+        // ������������� �� ������� OnObjectMoved
+        volumeSlider.OnObjectMoved += UpdateVolume;
     }
     void FixedUpdate()
     {
@@ -24,12 +27,21 @@ public class borderSlider : MonoBehaviour
         {
             _transform.position = new Vector3(_transform.position.x, 9.3f, -3.70f);
         }
-        if (_transform.position.x < -6.7f && _transform.position.x > -12.3f)
-        {
-            PlayerPrefs.SetFloat("totalVolume", ((_transform.position.x - (-6.6f)) / -0.056f)/100);
-            Debug.Log((_transform.position.x - (-6.6f)) / -0.056f);
-        }
+    }
 
+    private void OnDestroy()
+    {
+        // ������������ �� ������� OnObjectMoved ��� ����������� �������
+        volumeSlider.OnObjectMoved -= UpdateVolume;
+    }
 
+    private void UpdateVolume()
+    {
+        // ���������� � ���������� �������� ���������
+        float normalizedVolume = Mathf.InverseLerp(-6.7f, -12.3f, _transform.position.x);
+        float scaledVolume = Mathf.Lerp(0.1f, 3f, normalizedVolume);
+        AudioListener.volume = scaledVolume;
+        PlayerPrefs.SetFloat("totalVolume", scaledVolume);
+        PlayerPrefs.Save();
     }
 }

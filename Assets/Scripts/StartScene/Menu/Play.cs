@@ -9,8 +9,7 @@ public class Play : MonoBehaviour
     
     private void OnMouseDown()
     {
-        gameObject.SetActive(true);
-        
+        gameObject.SetActive(true); 
     }
     private void SceneChange(int index)
     {

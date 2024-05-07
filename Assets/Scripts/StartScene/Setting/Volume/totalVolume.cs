@@ -1,37 +1,49 @@
 using UnityEngine;
 
-public class totalVolume: MonoBehaviour
+public class totalVolume : MonoBehaviour
 {
     public GameObject checkBox;
     public GameObject slider;
-    float i;
-    private void OnMouseDown()
+    private float initialVolume = 1f;
+
+    private void Start()
     {
+        // Проверяем, сохранено ли значение громкости
         if (PlayerPrefs.HasKey("totalVolume"))
         {
-            i = PlayerPrefs.GetFloat("totalVolume");  
-            if (i == 1 || i > 0)
-            {
-                checkBox.SetActive(false);
-                PlayerPrefs.SetFloat("totalVolume", 0);
-                AudioListener.volume = 0;
-                slider.SetActive(false);
-            }
-            if (i == 0)
-            {
-                checkBox.SetActive(true);
-                PlayerPrefs.SetFloat("totalVolume", 1);
-                AudioListener.volume = 1;
-                slider.SetActive(true);
-            }
+            float savedVolume = PlayerPrefs.GetFloat("totalVolume");
+
+            // Устанавливаем сохраненное значение громкости
+            SetVolume(savedVolume);
         }
         else
         {
-            PlayerPrefs.SetFloat("totalVolume", 0);
-            checkBox.SetActive(false);
+            // Если значение громкости не сохранено, устанавливаем громкость по умолчанию
+            SetVolume(initialVolume);
         }
     }
 
+    private void OnMouseDown()
+    {
+        float currentVolume = AudioListener.volume;
 
+        if (currentVolume > 0)
+        {
+            SetVolume(0f);
+        }
+        else
+        {
+            SetVolume(initialVolume);
+        }
+    }
 
+    private void SetVolume(float volume)
+    {
+        AudioListener.volume = volume;
+        PlayerPrefs.SetFloat("totalVolume", volume);
+        PlayerPrefs.Save();
+
+        checkBox.SetActive(volume > 0);
+        slider.SetActive(volume > 0);
+    }
 }

@@ -1,35 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LightSlider : MonoBehaviour
 {
-    public GameObject _checkBox;
-    public Vector3 GameObj;
     public GameObject objectToMove;
+
+    // Создаем событие для перемещения объекта
+    public delegate void ObjectMovedEvent();
+    public static event ObjectMovedEvent OnObjectMoved;
+
     private void OnMouseDown()
     {
-        Vector3 mouse = Input.mousePosition;
-        Ray castPoint = Camera.main.ScreenPointToRay(mouse);
-        RaycastHit hit;
-        if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
-        {
-            objectToMove.transform.position = hit.point;
-        }
-
+        UpdateObjectPosition();
     }
 
     private void OnMouseDrag()
     {
-        Vector3 mouse = Input.mousePosition;
-        Ray castPoint = Camera.main.ScreenPointToRay(mouse);
+        UpdateObjectPosition();
+    }
+
+    private void UpdateObjectPosition()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        Ray castPoint = Camera.main.ScreenPointToRay(mousePosition);
         RaycastHit hit;
+
         if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
         {
-
             objectToMove.transform.position = hit.point;
 
+            // Вызываем событие OnObjectMoved
+            OnObjectMoved?.Invoke();
         }
-
     }
 }
