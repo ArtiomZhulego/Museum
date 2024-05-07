@@ -28,35 +28,4 @@ public class volumeSlider : MonoBehaviour
         }
     }
 
-    private void OnMouseDrag()
-    {
-        Vector3 mouse = Input.mousePosition;
-        Ray castPoint = Camera.main.ScreenPointToRay(mouse);
-        RaycastHit hit;
-        if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
-        {
-            objectToMove.transform.position = hit.point;
-
-            // �������� ������� OnObjectMoved
-            if (OnObjectMoved != null)
-            {
-                OnObjectMoved();
-            }
-        }
-        
-    }
-
-    private void OnMouseDrag()
-    {
-        Vector3 mouse = Input.mousePosition;
-        Ray castPoint = Camera.main.ScreenPointToRay(mouse);
-        RaycastHit hit;
-        if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
-        {
-            
-            objectToMove.transform.position = hit.point;
-            
-        }
-        
-    }
 }
