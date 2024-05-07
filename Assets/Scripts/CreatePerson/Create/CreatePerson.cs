@@ -23,7 +23,7 @@ public class CreatePerson : MonoBehaviour
 
     private int top = 200;
 
-    private int bottom = 800;
+    private int bottom = 500;
 
     private int createPerson = 0; 
 
