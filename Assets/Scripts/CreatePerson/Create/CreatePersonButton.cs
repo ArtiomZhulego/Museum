@@ -28,7 +28,7 @@ public class CreatePersonButton : MonoBehaviour
         {
             CharacterName = person.name;
         }
-        else { Debug.Log("person");  }
+        else { Debug.Log("person"); }
 
 
         TMP_InputField nameCharacter = inputFieldName.GetComponent<TMP_InputField>();
@@ -42,7 +42,7 @@ public class CreatePersonButton : MonoBehaviour
             }
             else { Debug.Log("CharacterName"); }
         }
-        
+
         else { nameCharacter.image.color = Color.red; }
 
 

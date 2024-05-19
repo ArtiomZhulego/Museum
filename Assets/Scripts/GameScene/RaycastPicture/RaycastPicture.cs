@@ -1,10 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Threading;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
@@ -52,6 +47,48 @@ public class RaycastPicture : MonoBehaviour
                     {
                         SceneManager.LoadScene("StartScene");
                         Cursor.lockState = CursorLockMode.Confined;
+                    }
+                    break;
+                case "Bookcase":
+                    CanvasText.text = "Hажмите <color=green>Е</color> для знакомства с библиотекой";
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        SceneManager.LoadScene(5);
+                    }
+                    break;
+                case "BookcaseSummer":
+                    CanvasText.text = "Hажмите <color=green>Е</color> для знакомства с мультиком о Лете";
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Application.OpenURL("https://vk.com/video-54443855_168050768" + Application.identifier);
+                    }
+                        break;
+                case "BookcaseAutumn":
+                    CanvasText.text = "Hажмите <color=green>Е</color> для знакомства с мультиком о Осени";
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Application.OpenURL("https://www.youtube.com/watch?v=w66cJV5k3Rk&t=60s" + Application.identifier);
+                    }
+                    break;
+                case "BookcaseWinter":
+                    CanvasText.text = "Hажмите <color=green>Е</color> для знакомства с мультиком о Зиме";
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Application.OpenURL("https://www.youtube.com/watch?v=9ZQ43LLjLfY&t=7s" + Application.identifier);
+                    }
+                    break;
+                case "BookcaseSpring":
+                    CanvasText.text = "Hажмите <color=green>Е</color> для знакомства с мультиком о Весне";
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Application.OpenURL("https://vk.com/video/@sovmultinfo" + Application.identifier);
+                    }
+                    break;
+                case "BookcaseAll":
+                    CanvasText.text = "Hажмите <color=green>Е</color> для знакомства с мультфильмом про времена года";
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Application.OpenURL("https://www.youtube.com/watch?v=1PVZGivbAOY" + Application.identifier);
                     }
                     break;
                 default:
