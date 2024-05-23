@@ -49,13 +49,13 @@ public class RaycastPicture : MonoBehaviour
                         Cursor.lockState = CursorLockMode.Confined;
                     }
                     break;
-                case "Bookcase":
+                /*case "Bookcase":
                     CanvasText.text = "Hажмите <color=green>Е</color> для знакомства с библиотекой";
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         SceneManager.LoadScene(5);
                     }
-                    break;
+                    break;*/
                 case "BookcaseSummer":
                     CanvasText.text = "Hажмите <color=green>Е</color> для знакомства с мультиком о Лете";
                     if (Input.GetKeyDown(KeyCode.E))
@@ -91,7 +91,19 @@ public class RaycastPicture : MonoBehaviour
                         Application.OpenURL("https://www.youtube.com/watch?v=1PVZGivbAOY" + Application.identifier);
                     }
                     break;
-                default:
+                case "LeaveSCENE":
+                    CanvasText.text = "Hажмите <color=green>Е</color> для выхода из костюм сцены";
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        SceneManager.LoadScene(2);
+                    }
+                    break;
+                case "SignSCE":
+                    CanvasText.text = "Hажмите <color=green>Е</color> для знакомства с областями Гомеля";
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        SceneManager.LoadScene(5);
+                    }
                     break;
             }
         }
