@@ -23,7 +23,9 @@ public class CreatePerson : MonoBehaviour
 
     private int top = 200;
 
-    private int bottom = 800;
+    private int bottom = 500;
+
+    private int createPerson = 0; 
 
     private void Start()
     {
@@ -55,10 +57,10 @@ public class CreatePerson : MonoBehaviour
 
         }
 
-        if (items.Count > 0)
+        if (items.Count > 0 && createPerson <= 6)
         {
 
-            for (int i = 0; i < items.Count; i++)
+            for (int i = 0; i < items.Count && createPerson <= 6; i++)
             {
                 GameObject panel = Instantiate(_panel, new Vector3(), Quaternion.identity);
                 panel.transform.SetParent(Parent.transform);
@@ -80,8 +82,11 @@ public class CreatePerson : MonoBehaviour
                 {
                     _text.text = items[i];
                 }
+
+                createPerson++;
             }
         }
+
     }
 
     static void SetPadding(RectTransform rect, float left, float top, float right, float bottom)

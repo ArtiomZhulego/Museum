@@ -59,7 +59,7 @@ public class RaycastAnimals : MonoBehaviour
                             }
                         }
                     }
-                    
+
                     break;
                 case "Deer":
 
@@ -81,8 +81,8 @@ public class RaycastAnimals : MonoBehaviour
                         {
                             if (Input.GetKeyDown(KeyCode.E))
                             {
-                                    Player.clip = Брест;
-                                    Player.Play();
+                                Player.clip = Брест;
+                                Player.Play();
                             }
                         }
                     }
@@ -95,7 +95,7 @@ public class RaycastAnimals : MonoBehaviour
                     if (AnimalAnimator.GetBool("IsTalk")) CanvasText.text = "Hажмите <color=red>Е</color> для прекращения прослушивания рассказа";
                     else CanvasText.text = "Hажмите <color=green>Е</color> для прослушивания рассказа о Гомельской области";
 
-                    if (Input.GetKeyDown(KeyCode.E)) 
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
                         if (AnimalAnimator.GetBool("IsTalk")) AnimalAnimator.SetBool("IsTalk", false);
                         else AnimalAnimator.SetBool("IsTalk", true);
@@ -122,7 +122,7 @@ public class RaycastAnimals : MonoBehaviour
                     if (AnimalAnimator.GetBool("IsTalk")) CanvasText.text = "Hажмите <color=red>Е</color> для прекращения прослушивания рассказа";
                     else CanvasText.text = "Hажмите <color=green>Е</color> для прослушивания рассказа о Могилёвской области";
 
-                    if (Input.GetKeyDown(KeyCode.E)) 
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
                         if (AnimalAnimator.GetBool("IsTalk")) AnimalAnimator.SetBool("IsTalk", false);
                         else AnimalAnimator.SetBool("IsTalk", true);
@@ -149,14 +149,14 @@ public class RaycastAnimals : MonoBehaviour
                     if (AnimalAnimator.GetBool("IsTalk")) CanvasText.text = "Hажмите <color=red>Е</color> для прекращения прослушивания рассказа";
                     else CanvasText.text = "Hажмите <color=green>Е</color> для прослушивания рассказа о Минской области";
 
-                    if (Input.GetKeyDown(KeyCode.E)) 
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
                         if (AnimalAnimator.GetBool("IsTalk")) AnimalAnimator.SetBool("IsTalk", false);
                         else AnimalAnimator.SetBool("IsTalk", true);
 
                         if (Input.GetKeyDown(KeyCode.E))
                         {
-                           
+
                             if (Player.isPlaying)
                             {
                                 if (Input.GetKeyDown(KeyCode.E)) { Player.Stop(); }
@@ -178,7 +178,7 @@ public class RaycastAnimals : MonoBehaviour
                     AnimalAnimator = hit.collider.transform.GetComponent<Animator>();
 
                     if (AnimalAnimator.GetBool("IsTalk")) CanvasText.text = "Hажмите <color=red>Е</color> для прекращения прослушивания рассказа";
-                    else CanvasText.text = "Hажмите <color=green>Е</color> для прослушивания рассказа о Минской области";
+                    else CanvasText.text = "Hажмите <color=green>Е</color> для прослушивания рассказа о Витебской области";
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
@@ -195,7 +195,7 @@ public class RaycastAnimals : MonoBehaviour
                             {
                                 if (Input.GetKeyDown(KeyCode.E))
                                 {
-                                    Player.clip = Минск;
+                                    Player.clip = Витебск;
                                     Player.Play();
                                 }
                             }

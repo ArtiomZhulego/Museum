@@ -17,12 +17,12 @@ public class CreatePlayer : MonoBehaviour
             player.transform.localScale = new Vector3(8, 8, 8);
             player.tag = "Player";
 
-            Rigidbody playerRigitbody =  player.GetComponent<Rigidbody>();
+            Rigidbody playerRigitbody = player.GetComponent<Rigidbody>();
             playerRigitbody.freezeRotation = true;
 
             player.GetComponent<BoxCollider>();
             player.AddComponent<Running>();
-            
+
 
             player.name = PlayerPrefs.GetString("PlayerName");
 
@@ -31,7 +31,7 @@ public class CreatePlayer : MonoBehaviour
             cameraObject.Rotate(0, 0, 0);
         }
 
-        
+
 
     }
 }

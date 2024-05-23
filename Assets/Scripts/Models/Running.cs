@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class Running : MonoBehaviour
 {
@@ -36,29 +32,29 @@ public class Running : MonoBehaviour
 
         float sensivity = PlayerPrefs.GetFloat("MouseSensitivity") * 5;
 
-        float mouseX = Input.GetAxis("Horizontal") * sensivity * Time.deltaTime;
+        float Horizontal = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
 
-        float mouseY = Input.GetAxis("Vertical") * sensivity * Time.deltaTime;
+        float Vertical = Input.GetAxis("Vertical") * Time.deltaTime * speed;
 
-        if (mouseX != 0 || mouseY != 0)
+        if (Horizontal != 0 || Vertical != 0)
         {
-            if (mouseY > 0.1)
+            if (Vertical > 0.1)
             {
                 animator.SetBool("IsRun", true);
             }
             else animator.SetBool("IsRun", false);
 
-            if (mouseY < -0.1) animator.SetBool("BackRunning", true);
+            if (Vertical < -0.1) animator.SetBool("BackRunning", true);
             else animator.SetBool("BackRunning", false);
 
-            if (mouseX > 0.1) animator.SetBool("RightRunning", true);
+            if (Horizontal > 0.1) animator.SetBool("RightRunning", true);
             else animator.SetBool("RightRunning", false);
             
-            if (mouseX < -0.1) animator.SetBool("LeftRunning", true);
+            if (Horizontal < -0.1) animator.SetBool("LeftRunning", true);
             else animator.SetBool("LeftRunning", false);
         }
 
-        move = transform.right * mouseX + transform.forward * mouseY;
+        move = transform.right * Horizontal + transform.forward * Vertical;
 
         characterRigidbody.velocity = move * speed;
     }

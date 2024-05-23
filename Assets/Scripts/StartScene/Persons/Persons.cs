@@ -9,21 +9,14 @@ using UnityEngine.UI;
 public class Persons : MonoBehaviour
 {
     public GameObject _panel;
-
-    private RectTransform rect;
-
     public GameObject Parent;
-
     public string[] massFolderFiles;
-    
-    private string mypath;
-    
     public List<string> items;
-    
     public string[] _item;
 
+    private RectTransform rect;
     private int top = 50;
-
+    private string mypath;
     private int bottom = 470;
 
     private void OnEnable()
@@ -53,16 +46,16 @@ public class Persons : MonoBehaviour
                     {
                         items.Add(_item[1].Split('.')[0]);
                     }
-                   
+
                 }
-                catch 
+                catch
                 {
                 }
-                
+
             }
 
         }
-        
+
         if (items.Count != null && items.Count > 0)
         {
 
@@ -70,7 +63,7 @@ public class Persons : MonoBehaviour
             {
                 GameObject panel = Instantiate(_panel, new Vector3(), Quaternion.identity);
                 panel.transform.SetParent(Parent.transform);
-                
+
                 rect = panel.GetComponent<RectTransform>();
                 SetPadding(rect, 15, top, 15, bottom);
 
