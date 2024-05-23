@@ -8,12 +8,24 @@ public class Film3Film : MonoBehaviour
     public GameObject FilmCube;
     public Canvas FilmCanvas;
     public VideoPlayer videoPlayer;
+
     string videoUrl = "";
 
+    private Vector3 targetPosition;
+    protected bool isFullScrean = false;
+    void Start()
+    {
+        FilmCube.SetActive(false);
+        FilmCanvas.gameObject.SetActive(true);
+        targetPosition = new Vector3(-30.8f, 20.5f, 3.8f);
+        Time.timeScale = 1f;
+        isFullScrean = false;
+    }
 
-    // Start is called before the first frame update
+
     void OnMouseDown()
     {
+
         PlayerPrefs.SetString("FilmName", "http://kinosotik.com/download/operaciya-y-i-drugie-priklyucheniya-churika?original");
         videoUrl = PlayerPrefs.GetString("FilmName");
 
@@ -23,6 +35,10 @@ public class Film3Film : MonoBehaviour
         videoPlayer.Prepare();
 
         FilmCanvas.gameObject.SetActive(false);
-        FilmCube.gameObject.SetActive(true);
+        FilmCube.SetActive(true);
+        videoPlayer.Play();
+
+        FilmCube.transform.position = targetPosition;
+        isFullScrean = true;
     }
 }
